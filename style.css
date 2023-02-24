@@ -42,12 +42,6 @@ button {
     padding: 5px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 14px;
     border-radius: 8px;
-}
-
-a:link {
-    color: black;
-    font-weight: bold;
 }

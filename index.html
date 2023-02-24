@@ -10,7 +10,7 @@
         Приветствую тебя, друг, на игре по Ирландии и ирландским танцам!
         Устраивайся поудобнее, налей себе чаю и отправляйся в приятное приключение!
     </div>
-    <form action="/handler.php" method="post" target="_blank">
+    <form action="/handler.php" method="post">
         <label for="clientName">Здесь ты можешь написать свое имя или ник, я буду счастлив с тобой познакомиться</label>
         <input type="text" id="clientName" name="clientName"/>
         <p>
@@ -20,7 +20,7 @@
             Отвечай на вопросы, в конце ты можешь отправить мне свои ответы и посмотреть правильные.<br/>
             Если ты согласен, жмякни на кнопку и зарядись удачей на все приключение!<br/>
         </p>
-        <button formaction="./luck.jpg">Ловлю удачу за хвост!<img src="/clever.jfif" alt="картинка" style="vertical-align: medium" width="7%"></button>
+        <button formaction="./luck.jpg" formtarget="_blank">Ловлю удачу за хвост!<img src="./clever.jfif" alt="картинка" style="vertical-align: medium" width="7%"></button>
         <hr/>
         <p>Я уверен, что первая (или вторая, после пива:) ) ассоциация со словом "Ирландия" у тебя - это зеленый цвет.<br>
             Зеленый действительно является традиционным цветом Ирландии, что восходит еще к самой гэльской традиции.<br>
@@ -30,12 +30,12 @@
         <p class="p2">
             А давай вспомним, какие еще цвета есть на флаге Ирландии?
         </p>
-        <input type="checkbox" id="red" name="color"><label for="red">Красный</label><br>
-        <input type="checkbox" id="blue" name="color"><label for="blue">Синий</label><br>
-        <input type="checkbox" id="orange" name="color"><label for="orange">Оранжевый</label><br>
-        <input type="checkbox" id="violet" name="color"><label for="violet">Фиолетовый</label><br>
-        <input type="checkbox" id="onecolor" name="color"><label for="onecolor">Флаг однотонно зеленый, не смеши
-        меня!</label><br>
+        <label><input type="checkbox" value="white" name="color">Белый</label><br>
+        <label><input type="checkbox" value="red" name="color">Красный</label><br>
+        <label><input type="checkbox" value="blue" name="color">Синий</label><br>
+        <label><input type="checkbox" value="orange" name="color">Оранжевый</label><br>
+        <label><input type="checkbox" value="violet" name="color" >Фиолетовый</label><br>
+        <label><input type="checkbox" value="onecolor" name="color">Флаг однотонный, не смеши меня</label><br>
         <hr/>
         <p>
             Еще один известный символ Ирландии - клевер. Считается, что это растение приносит удачу. Но это не совсем так:)
@@ -44,11 +44,10 @@
         <p class="p2">
             Сколько листьев должно быть у клевера, который принесёт тебе удачу?
         </p>
-        <input type="radio" id="three" name="flower"><label for="three">Три</label><br>
-        <input type="radio" id="four" name="flower"><label for="four">Четыре</label><br>
-        <input type="radio" id="lilac" name="flower"><label for="lilac">Ерунда, удачу приносит четырехлистная
-        сирень!</label><br>
-        <input type="radio" id="idontknow" name="flower"><label for="idontknow">Я томат</label><br>
+        <label><input type="radio" value="three" name="flower">Три</label><br>
+        <label><input type="radio" value="four" name="flower">Четыре</label><br>
+        <label><input type="radio" value="lilac" name="flower">Ерунда, удачу приносит четырехлистная сирень!</label><br>
+        <label><input type="radio" id="idontknow" name="flower">Я томат</label><br>
         <hr/>
         <p>
             Про легендарное пиво из Ирландии - Гиннес - я не буду тебя спрашивать, потому что это слишком просто:)<br>
@@ -61,11 +60,11 @@
         <p class="p2">
             Кто из нижеперечисленных танцоров является постановщиком шоу Lord of the Dance?
         </p>
-        <input type="radio" id="flatley" name="name"><label for="flatley">Майкл Флетли</label><br>
-        <input type="radio" id="dann" name="name"><label for="dann">Колин Данн</label><br>
-        <input type="radio" id="nazarov" name="name"><label for="nazarov">Сергей Назаров</label><br>
-        <input type="radio" id="gardiner" name="name"><label for="gardiner">Метью Гардинер</label><br>
-        <input type="radio" id="mortalo" name="name"><label for="mortalo">Шон Мортало</label><br>
+        <label><input type="radio" value="flatley" name="name">Майкл Флетли</label><br>
+        <label><input type="radio" value="dann" name="name">Колин Данн</label><br>
+        <label><input type="radio" value="nazarov" name="name">Сергей Назаров</label><br>
+        <label><input type="radio" value="gardiner" name="name">Метью Гардинер</label><br>
+        <label><input type="radio" value="mortalo" name="name">Шон Мортало</label><br>
         <hr/>
         <p>
             У ирландцев очень красивая национальная музыка.<br>
@@ -76,7 +75,7 @@
             Напиши названия нескольких кельтских или ирландских песен, которые знаешь)<br>
             PS В России тоже много фолка играют, можно писать русские песни:)
         </p>
-        <textarea></textarea>
+        <textarea name="song"></textarea>
         <hr/>
         <p>
             Сейчас будет очень сложный вопрос про танцы, но ты обязательно найдешь ответ)<br>
@@ -88,15 +87,15 @@
         <p class="p2">
             Что из нижеперечисленного является названием видов ирландского танца
         </p>
-        <select multiple size="5">
-            <option>Рил</option>
-            <option>Антраша</option>
-            <option>Хорнпайп</option>
-            <option>Хоп</option>
-            <option>Клик</option>
-            <option>Джига</option>
-            <option>Батман</option>
-            <option>Байсикл</option>
+        <select name="dance" multiple size="5">
+            <option value="reel">Рил</option>
+            <option value="antrasha">Антраша</option>
+            <option value="hornpipe">Хорнпайп</option>
+            <option value="hop">Хоп</option>
+            <option value="click">Клик</option>
+            <option value="jig">Джига</option>
+            <option value="batman">Батман</option>
+            <option value="bicycle">Байсикл</option>
         </select><br/>
         <hr/>
         <p>
@@ -108,11 +107,11 @@
         <p class="p2">
             Кого, согласно легенде, Святой Патрик изгнал с острова Ирландия?
         </p>
-        <select>
-            <option>Колдунов</option>
-            <option>Змей</option>
-            <option>Крыс</option>
-            <option>Язычников</option>
+        <select name="patrik">
+            <option value="witch">Колдунов</option>
+            <option value="snake">Змей</option>
+            <option value="rat">Крыс</option>
+            <option value="pagan">Язычников</option>
         </select><br/>
         <hr/>
         <hr/>
@@ -122,15 +121,15 @@
             Ты можешь отправить мне свои ответы, нажав на кнопку:
         </p>
         <button type="submit">Вжух - и отправил ответы</button>
-        <p>
-            У меня есть для тебя на сегодня еще одно последнее приключение;)<br/>
-            Если хочешь узнать правильные ответы, кликай сюда
-        </p>
-        <button formaction="dz2_answers.html">Хочу узнать ответы</button>
-        <p>
-            А если не хочешь смотреть ответы, то я поделюсь с тобой красивыми фотокарточками в качестве бонуса:)<br>
-        </p>
-        <button formaction="dz2_bonus.html">Покажи красивые фотокарточки!</button>
     </form>
+    <p>
+        У меня есть для тебя на сегодня еще одно последнее приключение;)<br/>
+        Если хочешь узнать правильные ответы, кликай сюда
+    </p>
+    <button type="button" onclick="location.href='dz2_answers.html'">Хочу узнать ответы</button>
+    <p>
+        А если не хочешь смотреть ответы, то я поделюсь с тобой красивыми фотокарточками в качестве бонуса:)<br>
+    </p>
+    <button type="button" onclick="location.href='dz2_bonus.html'">Покажи красивые фотокарточки!</button>
 </body>
 </html>
